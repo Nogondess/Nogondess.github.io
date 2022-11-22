@@ -8,17 +8,31 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Spark学习笔记 | Nog&#39;s BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="1. Spark概述1.1 Spark是什么Apache Spark™ is a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters.">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Spark学习笔记">
 <meta property="og:url" content="http://example.com/2022/11/06/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Nog&#39;s BLOG">
+<meta property="og:description" content="1. Spark概述1.1 Spark是什么Apache Spark™ is a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/wps1.jpg">
+<meta property="og:image" content="http://example.com/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/image-20221121155206994.png">
+<meta property="og:image" content="http://example.com/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/wps2.jpg">
+<meta property="og:image" content="http://example.com/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/wps3.jpg">
+<meta property="og:image" content="http://example.com/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/wps4.jpg">
+<meta property="og:image" content="http://example.com/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/wps5.jpg">
+<meta property="og:image" content="http://example.com/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/image-20221121181329248.png">
+<meta property="og:image" content="http://example.com/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/image-20221122131819165.png">
+<meta property="og:image" content="http://example.com/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/image-20221122131932476.png">
+<meta property="og:image" content="http://example.com/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/wps6.jpg">
+<meta property="og:image" content="http://example.com/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/wps7.jpg">
 <meta property="article:published_time" content="2022-11-06T09:28:12.000Z">
-<meta property="article:modified_time" content="2022-11-06T09:28:50.058Z">
+<meta property="article:modified_time" content="2022-11-22T08:12:24.819Z">
 <meta property="article:author" content="nogondess">
 <meta property="article:tag" content="大数据">
 <meta property="article:tag" content="Spark">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/wps1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Nog&#39;s BLOG" type="application/atom+xml">
   
@@ -174,7 +188,105 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="1-Spark概述"><a href="#1-Spark概述" class="headerlink" title="1. Spark概述"></a>1. Spark概述</h1><h2 id="1-1-Spark是什么"><a href="#1-1-Spark是什么" class="headerlink" title="1.1 Spark是什么"></a>1.1 Spark是什么</h2><p>Apache Spark™ is a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters.													<br>                                                                                                                                        ——来自官网门面第一句话</p>
+<p>Apache Spark is a unified analytics engine for large-scale data processing. It provides high-level APIs in Java, Scala, Python and R, and an optimized engine that supports general execution graphs. It also supports a rich set of higher-level tools including <a target="_blank" rel="noopener" href="https://spark.apache.org/docs/latest/sql-programming-guide.html">Spark SQL</a> for SQL and structured data processing, <a target="_blank" rel="noopener" href="https://spark.apache.org/docs/latest/api/python/getting_started/quickstart_ps.html">pandas API on Spark</a> for pandas workloads, <a target="_blank" rel="noopener" href="https://spark.apache.org/docs/latest/ml-guide.html">MLlib</a> for machine learning, <a target="_blank" rel="noopener" href="https://spark.apache.org/docs/latest/graphx-programming-guide.html">GraphX</a> for graph processing, and <a target="_blank" rel="noopener" href="https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html">Structured Streaming</a> for incremental computation and stream processing.<br>                                                                                                                        ——来自Spark 3.3.1官方文档Overview</p>
+<h2 id="1-2-Spark-x2F-Hadoop"><a href="#1-2-Spark-x2F-Hadoop" class="headerlink" title="1.2 Spark&#x2F;Hadoop"></a>1.2 Spark&#x2F;Hadoop</h2><p>Spark就是在传统的MapReduce 计算框架的基础上，利用其计算过程的优化，从而大大加快了数据分析、挖掘的运行和读写速度，<strong>并将计算单元缩小到更适合并行计算和重复使用的RDD计算模型</strong>。</p>
+<p>Spark和Hadoop的根本差异是多个作业之间的数据通信问题 : Spark多个作业之间数据通信是<strong>基于内存</strong>，而Hadoop是<strong>基于磁盘</strong>。(Spark只有在shuffle时才会落盘)</p>
+<h1 id="2-Spark运行模式"><a href="#2-Spark运行模式" class="headerlink" title="2. Spark运行模式"></a>2. Spark运行模式</h1><h2 id="2-1-Local-Mode"><a href="#2-1-Local-Mode" class="headerlink" title="2.1. Local Mode"></a>2.1. Local Mode</h2><p>在本地运行，进入spark文件夹在终端中输入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/spark-shell --master local</span><br></pre></td></tr></table></figure>
+
+<p>启动本地Spark环境，<strong>启动后可以通过<a href="http://localhost:4040访问Spark任务监控的WebUI">http://localhost:4040访问Spark任务监控的WebUI</a></strong></p>
+<p>![在Local启动Spark环境](&#x2F;Users&#x2F;xujingqi&#x2F;Blog&#x2F;source&#x2F;_posts&#x2F;Spark学习笔记.assets&#x2F;截屏2022-11-21 11.51.29-9002741.png)</p>
+<p>或者通过</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/run-example SparkPi 10</span><br></pre></td></tr></table></figure>
+
+<p>直接运行Spark提供的例程</p>
+<p>![在本地运行Spark例程](&#x2F;Users&#x2F;xujingqi&#x2F;Blog&#x2F;source&#x2F;_posts&#x2F;Spark学习笔记.assets&#x2F;截屏2022-11-21 11.56.25.png)</p>
+<h2 id="2-2-Standalone-Deploy-Mode"><a href="#2-2-Standalone-Deploy-Mode" class="headerlink" title="2.2. Standalone Deploy Mode"></a>2.2. Standalone Deploy Mode</h2><p>官方文档给出的定义为：<strong>simplest way to deploy Spark on a private cluster</strong></p>
+<p>In addition to running on the Mesos or YARN cluster managers, Spark also provides a simple standalone deploy mode. You can launch a standalone cluster either manually, by starting a master and workers by hand, or use our provided <a target="_blank" rel="noopener" href="https://spark.apache.org/docs/latest/spark-standalone.html#cluster-launch-scripts">launch scripts</a>. It is also possible to run these daemons on a single machine for testing.<br>（详见官方文档：<a target="_blank" rel="noopener" href="https://spark.apache.org/docs/latest/spark-standalone.html%EF%BC%89">https://spark.apache.org/docs/latest/spark-standalone.html）</a></p>
+<h2 id="2-3-Hadoop-Yarn"><a href="#2-3-Hadoop-Yarn" class="headerlink" title="2.3. Hadoop Yarn"></a>2.3. Hadoop Yarn</h2><p>（详见官方文档：<a target="_blank" rel="noopener" href="https://spark.apache.org/docs/latest/running-on-yarn.html%EF%BC%89">https://spark.apache.org/docs/latest/running-on-yarn.html）</a></p>
+<p>Yarn集群下提交Spark任务的shell命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">./bin/spark-submit --class path.to.your.Class \</span><br><span class="line"> --master yarn \</span><br><span class="line"> --deploy-mode cluster \</span><br><span class="line"> [options] &lt;app jar&gt; [app options]</span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">./bin/spark-submit --class org.apache.spark.examples.SparkPi \</span><br><span class="line"> --master yarn \</span><br><span class="line"> --deploy-mode cluster \</span><br><span class="line"> --driver-memory 4g \</span><br><span class="line"> --executor-memory 2g \</span><br><span class="line"> --executor-cores 1 \</span><br><span class="line"> --queue thequeue \</span><br><span class="line"> examples/jars/spark-examples*.jar \</span><br><span class="line"> 10</span><br></pre></td></tr></table></figure>
+
+<p>其中，–deploy-mode 有两个参数：cluster 和 client，若需要切换部署模式，只需要改变这个参数即可。</p>
+<p><strong>Yarn集群下Spark任务提交流程图：</strong></p>
+<p>![Yarn集群下Spark任务提交流程图](&#x2F;Users&#x2F;xujingqi&#x2F;Blog&#x2F;source&#x2F;_posts&#x2F;Spark学习笔记.assets&#x2F;截屏2022-11-21 14.15.41.png)</p>
+<h3 id="2-3-1-Client"><a href="#2-3-1-Client" class="headerlink" title="2.3.1 Client"></a>2.3.1 Client</h3><p>Client模式下的Driver运行在Master节点上而非Worker节点上，所以相对于实际进行运算的Worker集群，Driver就相当于第三方的Client。</p>
+<p>Client Mode没有监督重启机制，如果Driver进程挂了，需要额外的程序重启，一般用于测试。</p>
+<p><strong>任务提交流程：</strong></p>
+<ol>
+<li>Driver在任务提交的本地机器上运行</li>
+<li>Driver启动后会和ResourceManager通讯申请启动ApplicationMaster</li>
+<li>ResourceManager分配container，在合适的NodeManager上启动ApplicationMaster，负责向ResourceManager申请Executor内存</li>
+<li>ResourceManager接到ApplicationMaster的资源申请后会分配container，然后ApplicationMaster在资源分配指定的NodeManager上启动Executor进程</li>
+<li>Executor进程启动后会向Driver反向注册，Executor全部注册完成后Driver开始执行main函数</li>
+<li>之后执行到Action算子时，触发一个Job，并根据宽依赖开始划分stage，每个stage生成对应的TaskSet，之后将task分发到各个Executor上执行。</li>
+</ol>
+<h3 id="2-3-2-Cluster"><a href="#2-3-2-Cluster" class="headerlink" title="2.3.2 Cluster"></a>2.3.2 Cluster</h3><p>Driver程序在Worker集群中的某个节点，位置由Master指定。</p>
+<p>Cluster Mode可以对Driver进行监控，如果Driver进程挂了可以自动重启，一般用于实际生产环境。</p>
+<p><strong>任务提交流程：</strong></p>
+<ol>
+<li>在YARN Cluster模式下，任务提交后会和ResourceManager通讯申请启动ApplicationMaster，</li>
+<li>随后ResourceManager分配container，在合适的NodeManager上启动ApplicationMaster，此时的ApplicationMaster就是Driver。</li>
+<li>Driver启动后向ResourceManager申请Executor内存，ResourceManager接到ApplicationMaster的资源申请后会分配container，然后在合适的NodeManager上启动Executor进程</li>
+<li>Executor进程启动后会向Driver反向注册，Executor全部注册完成后Driver开始执行main函数，</li>
+<li>之后执行到Action算子时，触发一个Job，并根据宽依赖开始划分stage，每个stage生成对应的TaskSet，之后将task分发到各个Executor上执行。</li>
+</ol>
+<h1 id="3-Spark编程"><a href="#3-Spark编程" class="headerlink" title="3. Spark编程"></a>3. Spark编程</h1><h2 id="3-1-RDD"><a href="#3-1-RDD" class="headerlink" title="3.1 RDD"></a>3.1 RDD</h2><h3 id="3-1-1-什么是RDD"><a href="#3-1-1-什么是RDD" class="headerlink" title="3.1.1 什么是RDD"></a>3.1.1 什么是RDD</h3><p>RDD（Resilient Distributed Dataset）叫做弹性分布式数据集，是Spark中最基本的数据处理模型。代码中是一个抽象类，它代表一个弹性的、不可变、可分区、里面的元素可并行计算的集合。</p>
+<ol>
+<li><p>弹性</p>
+<p>存储的弹性：内存与磁盘的自动切换；</p>
+<p>容错的弹性：数据丢失可以自动恢复；</p>
+<p>计算的弹性：计算出错重试机制；</p>
+<p>分片的弹性：可根据需要重新分片。</p>
+</li>
+<li><p>分布式：数据存储在大数据集群不同节点上</p>
+</li>
+<li><p>数据集：RDD封装了计算逻辑，并不保存数据</p>
+</li>
+<li><p>数据抽象：RDD是一个抽象类，需要子类具体实现</p>
+</li>
+<li><p>不可变：RDD封装了计算逻辑，是不可以改变的，想要改变，只能产生新的RDD，在新的RDD里面封装计算逻辑</p>
+</li>
+<li><p>可分区、并行计算</p>
+</li>
+</ol>
+<h3 id="3-1-2-RDD核心属性"><a href="#3-1-2-RDD核心属性" class="headerlink" title="3.1.2 RDD核心属性"></a>3.1.2 RDD核心属性</h3><p><img src="/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/wps1.jpg" alt="RDD核心属性"></p>
+<h4 id="A-list-of-partitions"><a href="#A-list-of-partitions" class="headerlink" title="A list of partitions"></a>A list of partitions</h4><p>分区列表，存储分区信息</p>
+<p><img src="/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/image-20221121155206994.png" alt="分区列表"></p>
+<h4 id="A-function-for-computing-each-split"><a href="#A-function-for-computing-each-split" class="headerlink" title="A function for computing each split"></a>A function for computing each split</h4><p>分区计算函数，Spark会使用该函数对每个分区进行计算</p>
+<p><img src="/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/wps2.jpg" alt="分区计算函数"></p>
+<h4 id="A-list-of-dependencies-on-other-RDDs"><a href="#A-list-of-dependencies-on-other-RDDs" class="headerlink" title="A list of dependencies on other RDDs"></a>A list of dependencies on other RDDs</h4><p>RDD之间的依赖关系，RDD是计算模型的封装，当需求中需要将多个计算模型进行组合时，就需要将多个RDD建立依赖关系</p>
+<p><img src="/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/wps3.jpg" alt="RDD之间的依赖关系"></p>
+<h4 id="A-Partitioner-for-key-value-RDDs"><a href="#A-Partitioner-for-key-value-RDDs" class="headerlink" title="A Partitioner for key-value RDDs"></a>A Partitioner for key-value RDDs</h4><p>分区器（可选），当数据为KV类型数据时，可以通过设定分区器自定义数据的分区</p>
+<p><img src="/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/wps4.jpg" alt="自定义数据分区"></p>
+<h4 id="A-list-of-preferred-locations-to-compute-each-split-on"><a href="#A-list-of-preferred-locations-to-compute-each-split-on" class="headerlink" title="A list of preferred locations to compute each split on"></a>A list of preferred locations to compute each split on</h4><p>首选位置（可选），计算数据时，可以根据计算节点的状态选择不同的节点位置进行计算</p>
+<p><img src="/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/wps5.jpg" alt="首选位置"></p>
+<h3 id="3-1-3-RDD执行原理"><a href="#3-1-3-RDD执行原理" class="headerlink" title="3.1.3 RDD执行原理"></a>3.1.3 RDD执行原理</h3><h4 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h4><p>RDD采用装饰者模式进行功能的增强，我们可以将RDD与Java中的IO流进行类比：</p>
+<p>考虑下面的代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">BufferedInputStream</span> <span class="variable">bis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedInputStream</span>(<span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;data/wc.txt&quot;</span>));</span><br><span class="line"><span class="type">int</span> <span class="variable">read</span> <span class="operator">=</span> bis.read();</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/image-20221121181329248.png" alt="BufferedInputStream"></p>
+<p>我们发现BufferedInputStream在FileInputStream的基础上增加了一个Buffer功能，让我们不需要每读一个字节就处理一个字节，而是将读到的字节存入Buffer中，到达一定数量再进行批量处理，相当于在FileInputStream的基础上增强了功能。这就是<strong>装饰者模式</strong>。<br>同时我们注意到，如果仅仅只获得了bis对象却不调用read()方法，那么装饰者模式增强的功能只是逻辑上的，只有调用了read()方法开始从文件中读取字节流，功能才开始正式起作用。</p>
+<p>我们可以将RDD的行动算子类比成read()方法、将功能算子类比成BufferedInputStream和FileInputStream，功能算子只封装逻辑，行动算子则进行逻辑。</p>
+<h4 id="Yarn环境执行流程"><a href="#Yarn环境执行流程" class="headerlink" title="Yarn环境执行流程"></a>Yarn环境执行流程</h4><ol>
+<li><p>启动Yarn环境</p>
+<p><img src="/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/image-20221122131819165.png" alt="启动Yarn环境"></p>
+</li>
+<li><p>Spark通过申请资源创建Driver和Executor</p>
+<p><img src="/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/image-20221122131932476.png" alt="Spark通过申请资源创建Driver和Executor"></p>
+</li>
+<li><p>Spark将job划分成多个Task</p>
+<p><img src="/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/wps6.jpg" alt="Spark将job划分成多个Task"></p>
+</li>
+<li><p>Driver将Task发送到不同的Executor进行计算</p>
+<p><img src="/Users/xujingqi/Blog/source/_posts/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/wps7.jpg" alt="Driver将Task发送到不同的Executor进行计算"></p>
+</li>
+</ol>
+
       
 
       
@@ -456,11 +568,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
             
             <div class="clearfix"></div>
